@@ -1,0 +1,67 @@
+*************************************
+- Ventanas que necesito tener en pantalla: Projects - Files - Palette - Navigator
+
+*************************************
+- Ubicacion del proyecto en la pc
+
+Para guardar en un pendrive:
+Dentro de Documentos de Windows vamos a NetbeansProjects (aqui se guardan los proyectos por defecto). Buscamos la carpeta creada y la copiamos en el escritorio. Solo desde el escritorio podemos guardarlo o copiarlo en un pendrive.
+Ya que tambien se guardan otros archivos.
+Para modificar algo del proyecto debemos ir a Netbeans y buscar la carpeta.
+
+
+*************************************
+- Cerrar todos los proyectos: pestaña File > Close all projects
+
+*************************************
+- Crear un nuevo proyecto: File > New Project > JavaApplication > next > doy nombre > finish
+
+- Crear un nuevo archivo: desde la carpeta creada, boton derecho, abro el menu contextual y selecciono New > JFrameForm, le doy nombre > finish 
+
+Nota: si voy a crear varias carpetas como en el caso del curso voy a crear todo en el src. Es decir, creo el proyecto carpeta java_curso y desde la pestaña Files voy a la carpeta src. En src creo una carpeta por clase. Me paro en cada carpeta para crear el JFrameForm. Y luego trabajo como siempre.
+
+*************************************
+Al crear el JFrameForm 
+
+se abre una ventana con 3 opciones Source (código), Design (diseño) y History.
+
+- Gestor de distribución:
+En la pestaña Diseño, click derecho sobre el panel de diseño. Selecciono Set Layout y la opcion Absolute. Esto es a elección, también hay más opciones como el free desing.
+
+*************************************
+Ventana Palette (a la derecha)
+En Swing Containers encuentro los elementos contenedores como Panel.
+
+En Swing controls encuentro los elementos para agregar con doble click o arrastrandolo al panel de diseño.
+En Properties puedo cambiar las propiedades del elemento que seleccione. Como texto, agregar imágenes, color de fondo, etc.
+
+
+*************************************
+Cambiar el color de fondo del frame
+
+Solo se puede cambiar desde código.
+Pero para las clases creamos otro panel desde el swing containers de Palette.
+Le damos el mismo tamaño del primer panel y desde background le cambbiamos el color.
+
+
+*************************************
+Agregar eventos
+
+Desde código, selecciono el botón, y voy a la pestaña Source. Voy a encontrar el evento del botón, agrego un mensaje por pantalla (en este caso, al hacer click sobre el botón se dispara el evento de mostrar el mensaje por consola).
+
+ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        System.out.println("Acceso denegado");
+                
+ }                                        
+
+Otra opción para agregar eventos es seleccionando el botón y con click derecho seleccionar Events Action ActionPerformed... Me lleva a la misma pantalla de Source.
+
+
+*************************************
+Ejecutar
+
+Desde la pestaña de Files (a la izquierda) me paro sobre el archivo con extensión java y con click derecho selecciono Run File. Se abre la pantalla que creamos en diseño y se abre también la ventan de consola por donde se imprimen los outputs y se ve si fue creado con éxito o hay errores. Por ejemplo:
+BUILD SUCCESSFUL (total time: 11 seconds)
+
+*************************************

@@ -1,0 +1,8 @@
+//CLASE 15, 02/10/2018
+Proyecto AltaDeUsuarios 2 (TXT en apuntes)
+Persistencia. que el dato exista más allá de apagar la pc.
+Doy usuario y contraseña. A medida que damos el alta a un usuario lo guardamos en un archivo .txt.
+Try catch
+Uso de PassworField, tipo de dato char[].
+File, FileWriter.
+Uso de string.valueOf().

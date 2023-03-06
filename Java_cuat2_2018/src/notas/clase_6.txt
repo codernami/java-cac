@@ -1,0 +1,31 @@
+Clase 6 
+
+Crear pantalla principal. 
+Me paro en la carpeta clase_6, crear JFrameForm.
+
+Creo un nuevo Panel, le doy color a través de la propiedad de Background.
+
+Agrego un label al que le voy a agregar una imagen desde la propiedad de Icon.
+Agrego un label con el texto "Ingrese usuario y contraseña".
+
+Superponer objetos:
+Selecciono el label de la imagen, click derecho y elijo Move Down.
+Selecciono el label del texto, click derecho y elijo Move Up.
+
+Agrego un TextField
+Agrego un Password Field
+Agrego un Button, le cambio el texto por Ingresar.
+
+Agrego un evento al botón.
+Lo selecciono, click derecho o doble click para ir a Source. Se agrega automaticamente como muestra abajo.
+Voy a agregar que al hacer click se muestre por consola un mensaje.
+En Source agrego sout + tab para generar System.out.println y entre paréntesis el mensaje que quiero mostrar.
+
+ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // TODO add your handling code here:
+        System.out.println("Acceso denegado");
+                
+ } 
+
+Ejecución
+Me paro sobre el Archivo JFrameForm creado, click derecho, run file.

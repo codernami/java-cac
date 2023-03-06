@@ -1,0 +1,6 @@
+*Clase 20, 30/10/2018
+Clases 20,21,22
+Proyecto PruebaDeDatos
+Ejercicios de conexión a base de datos. 
+Uso de Xammp y Workbench. Sql.
+Administrar base de datos desde Netbeans.

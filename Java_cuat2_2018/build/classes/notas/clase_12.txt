@@ -1,0 +1,6 @@
+*Clase 12, 18/09/2018
+Proyecto Numeros
+Limitar la cantidad de caracteres en un cuadro de texto. Evento KeyTyped. Consume. Formato con DecimalFormat.
+Lista desplegable ComboBox. Desde Propiedades y desde código. Método addItem.
+Eliminar eventos.
+Carteles de cuadro de dialogo desde la clase Metodos.

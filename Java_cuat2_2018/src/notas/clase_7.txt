@@ -1,0 +1,83 @@
+//CLASE 7, 28/08/2018
+
+new JavaClass
+
+package altadeusuario;
+
+
+public class AltaDeUsuario {
+
+    public static void main(String[] args) {
+        Pantalla PP = new Pantalla();
+        PP.setVisible(true);
+    }
+    
+}
+
+/*Saludo al usuario, muestra la clave ingresada a trav�s de un cuadro de mensaje (JoptionPane.showMessageDialog)
+Uso del m�todo length para contar los caracteres de usuario ingresado.
+Mostrar resultados por consola.
+*/    
+
+
+JFrameForm
+
+        Objetos con nombre:
+        2 etiquetas (labels)
+        2 cuadros de texto: txtUsuario y txtClave
+        1 botón: btnIngresar
+Con click derecho sobre el button cambio el nombre , change variable name. tambien se puede cambiar desde el Navigator. Lo mismo para cambiar de nombre los textfields.
+
+
+- evento de button
+private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        
+         //defino variables
+        String usuario;
+        String clave; //esto va a cambiar en un ejercicio más adelante, se usa password 
+        int largo;
+        
+        //obtengo el texto ingresado usando getText() y lo guardo en cada variable
+        usuario = this.txtUsuario.getText();
+        clave = this.txtClave.getText(); //aparece tachado porque hoy se usa otro objeto para las claves
+        
+        //muestro los datos ingresados a través de un cuadro de diálogo. 
+        //doy ok a la sugerencia de la lamparita: importar javax.swing.JOptionPane
+        JOptionPane.showMessageDialog(this,"Hola: " + usuario + " Tu clave: " + clave);
+        
+        //limpio los campos de texto usando setText y con las " " para vaciar
+        this.txtUsuario.setText("");
+        this.txtClave.setText("");
+        
+        //cuento los caracteres del texto ingreado en usuario usando length()y guardando en la variable largo
+        largo = usuario.length();
+        
+        //muestro por consola el largo del texto ingresado. lo que guardé en la variable largo
+        System.out.println(largo);
+        
+        /*paso a paso
+        1- Mostrar el texto ingresado en txtUsuario en un cuadro de diálogo
+        
+        String usuario;
+        Usuario = txtUsuario.getText();
+        JOptionPane.showMessageDialog(this, usuario);
+        
+        2- Mostrar un saludo al texto ingresado en usuario y ver el texto por consola 
+        
+        String usuario;
+        Usuario = txtUsuario.getText();
+        JOptionPane.showMessageDialog(this,"Hola: " + usuario);
+        
+        3- Sumo limpiar el cuadro de texto
+        
+        String usuario;
+        Usuario = txtUsuario.getText();
+        JOptionPane.showMessageDialog(this,"Hola: " + usuario);
+        this.txtUsuario.setText("");
+        System.out.println(usuario);
+        
+        Objetos con nombre:
+        2 etiquetas (labels)
+        2 cuadros de texto: txtUsuario y txtClave
+        1 botón: btnIngresar
+        */

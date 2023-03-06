@@ -1,0 +1,6 @@
+*Clase 11, 13/09/2018
+Proyecto Prueba2
+Clase Metodos
+Calcular una división y mostrar el resultado a través de un cuadro de dialogo. Y luego creo una clase para el cuadro de dialogo para asi llamarlo desde el main.
+Uso de tipos de datos float, double. 
+Ejercicios desde el main y lo muestro por consola.

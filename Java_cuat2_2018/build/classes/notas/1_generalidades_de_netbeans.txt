@@ -1,0 +1,11 @@
+Primero instalar el jdk. Luego instalar netbeans.
+Netbeans necesita reconocer el jdk instalado para poder instalarse.
+
+
+- Resetear IDE : pestaña Window > reset Windows (se resetea en el instante).
+
+- Cambiar aspecto de IDE (a dark por ejemplo): pestaña Tools > Options > Appearance > Look and feel y en preferred look and feel tengo las opciones a elegir. para dark esta FlatLaf Dark. Pero también se puede descargar Dracula. Ok y se resetea.
+
+- Ventanas que necesito tener en pantalla: Projects - Files - Palette - Navigator. Las habilito desde la pestaña Window. 
+
+

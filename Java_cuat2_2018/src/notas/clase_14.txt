@@ -1,0 +1,6 @@
+//CLASE 14, 27/09/2018
+BarraDeMenu
+Proyecto BarraDeMenu (Archivos, Principal en apuntes)
+Trabajar con barra de menú. Crear atajos.
+Crear un textfield público.
+Dispose en formularios. JPanel color.

@@ -1,0 +1,8 @@
+//CLASE 16, 04/10/2018
+//CONTINUACION CLASE 15
+Continúo con el proyecto anterior. Esta vez pruebo el ingreso con usuario y clave. Si ya estan registrados previamente.
+FileReader. BufferedReader.
+Si no está muestra un error de lectura.
+
+*Clase 16, 04/10/2018
+Proyecto AltaDeUsuarios3 (TXT en apuntes)
