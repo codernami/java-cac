@@ -1,0 +1,77 @@
+## SEGUNDA PARTE
+
+
+## consulta 11) obtener lista de artículos que incluya nombre, precio de artículos y nombre de fabricante
+
+SELECT articulos.nombre, precio, fabricante.nombre 
+FROM articulos, fabricante;
+
+
+
+## consulta 12) obtener el precio promedio de los artículos de cada fabricante (solo código de fabricante)
+
+SELECT AVG(precio), fabricante 
+FROM articulos, fabricante 
+GROUP BY fabricante;
+
+
+
+
+## consulta 13) obtener el precio promedio de los artículos de cada fabricante mostrando el nombre
+
+## del fabricante
+
+
+
+
+
+## consulta 14) listar los nombres de todos los fabricantes cuyo precio promedio sea >= 120
+
+
+
+
+
+## consulta 15) mostrar el nombre y el precio del artículo más barato
+
+SELECT nombre, MIN(precio) 
+FROM articulos;
+
+
+
+## consulta 16) mostrar el nombre y precio del artículo más caro de cada fabricante
+
+SELECT nombre, MAX(precio) 
+FROM articulos 
+GROUP BY fabricante;
+
+
+
+
+## consulta 17) introducir un nuevo artículo cuyo nombre sea savora de valor = 70 y su fabricante de 
+
+## código = 2 y el stock = 20
+
+INSERT INTO articulos (codigo, nombre, precio, stock, fabricante)
+
+VALUES
+('savora', 70, 20, 2);
+
+
+
+## consulta 18) cambiar el nombre del artículo 5 por parlantes
+
+UPDATE articulos set nombre = 'parlantes' 
+WHERE codigo = 5;
+
+
+
+## consulta 19) aplicar un descuento del 10% a todos los productos
+
+SELECT precio * 0.9 FROM articulos;
+
+
+
+
+## consulta 20) aplicar un descuento de $10 a todos aquellos artículos cuyo precio sea >= 150
+
+SELECT precio - 10 FROM ARTICULOS;

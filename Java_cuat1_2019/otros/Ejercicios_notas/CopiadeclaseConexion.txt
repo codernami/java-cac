@@ -1,0 +1,152 @@
+﻿Clase de conexión
+
+
+package servicios;
+import java.sql.*;
+public class Conexion {
+   private static Connection cnx = null;
+   public static Connection obtener() throws SQLException, ClassNotFoundException {
+      if (cnx == null) {
+         try {
+            Class.forName("com.mysql.jdbc.Driver");
+            cnx = DriverManager.getConnection("jdbc:mysql://localhost/java_mysql", "root", "");
+         } catch (SQLException ex) {
+            throw new SQLException(ex);
+         } catch (ClassNotFoundException ex) {
+            throw new ClassCastException(ex.getMessage());
+         }
+      }
+      return cnx;
+   }
+   public static void cerrar() throws SQLException {
+      if (cnx != null) {
+         cnx.close();
+      }
+   }
+}
+
+
+
+
+________________
+
+
+SQL
+
+
+Base de Datos: java_mysql
+
+
+CREATE TABLE tareas(
+   id_tarea int(10) unsigned not null auto_increment primary key,
+   titulo varchar (50) not null,
+   descripcion varchar(255) not null,
+   nivel_de_prioridad tinyint(1) not null
+);
+
+
+________________
+
+
+Clase tarea
+
+
+package modelos;
+public class Tarea {
+   private final Integer id_tarea;
+   private String titulo;
+   private String descripcion;
+   private Integer nivel_de_prioridad;
+   public Tarea() {
+      this.id_tarea = null;
+      this.titulo = null;
+      this.descripcion = null;
+      this.nivel_de_prioridad = null;
+   }
+   public Tarea(Integer id_tarea, String titulo, String descripcion, Integer nivel_de_prioridad) {
+      this.id_tarea = id_tarea;
+      this.titulo = titulo;
+      this.descripcion = descripcion;
+      this.nivel_de_prioridad = nivel_de_prioridad;
+   }
+   public Integer getId_tarea() {
+      return id_tarea;
+   }
+   public String getTitulo() {
+      return titulo;
+   }
+   public String getDescripcion() {
+      return descripcion;
+   }
+   public Integer getNivel_de_prioridad() {
+      return nivel_de_prioridad;
+   }
+   public void setTitulo(String titulo) {
+      this.titulo = titulo;
+   }
+   public void setDescripcion(String descripcion) {
+      this.descripcion = descripcion;
+   }
+   public void setNivel_de_prioridad(Integer nivel_de_prioridad) {
+      this.nivel_de_prioridad = nivel_de_prioridad;
+   }
+   @Override
+   public String toString() {
+      return "Tarea{" + "id_tarea=" + id_tarea + ", titulo=" + titulo + ", descripcion=" + descripcion + ", nivel_de_prioridad=" + nivel_de_prioridad + '}';
+   }} 
+Clase de consultas
+
+
+package servicios;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import modelos.Tarea;
+public class Tareas_servicio {
+  
+
+   public List<Tarea> recuperarTodas(Connection conexion) throws SQLException{
+      List<Tarea> tareas = new ArrayList<>();
+      try{
+         PreparedStatement consulta = conexion.prepareStatement("SELECT id_tarea, titulo, descripcion, nivel_de_prioridad FROM " + this.tabla + " ORDER BY nivel_de_prioridad");
+         ResultSet resultado = consulta.executeQuery();
+         while(resultado.next()){
+            tareas.add(new Tarea(resultado.getInt("id_tarea"), resultado.getString("titulo"), resultado.getString("descripcion"), resultado.getInt("nivel_de_prioridad")));
+         }
+      }catch(SQLException ex){
+         throw new SQLException(ex);
+      }
+      return tareas;
+   }
+}
+________________
+
+
+https://github.com/fernandoggaitan/conexion_java_mysql
+
+
+Clase Principal
+
+
+package servicios;
+
+
+import vistas.Tareas_listar_vista;
+
+
+public class Principal {
+
+
+    public static void main(String[] args) {
+        
+         Tareas_listar_vista vista = new Tareas_listar_vista();
+         vista.setVisible(true);
+         vista.setLocationRelativeTo(null);
+         
+    }
+
+
+}

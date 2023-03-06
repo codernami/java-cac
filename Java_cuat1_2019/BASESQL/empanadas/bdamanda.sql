@@ -1,0 +1,1 @@
+SELECT * FROM amanda.empanadas order by nombre DESC, id ASC;empanadas

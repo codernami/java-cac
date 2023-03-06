@@ -1,0 +1,100 @@
+
+CONSULTA DE BASE DE DATOS II
+
+- Obtener los nombres de los productos de la tienda.
+select nombre from articulos;
+
+- Obtener los nombres y los precios de los productos de la tienda.
+select nombre, precio from articulos;
+
+- Obtener el nombre de los productos cuyo no precio sea menor o igual a los $200.
+select nombre from articulos 
+where precio >= '200';
+
+- Obtener todos los datos de los artículos cuyo precio esté entre los $600 y 4120 (ambas cantidades incluidas).
+select * from articulos
+where precio >= '60' and precio = '120';
+
+- Obtener el nombre y precio en dólares (es decir, el precio en pesos multiplicado por el valor actual del dólar9.
+select nombre, precio * 12.93
+from articulos;
+
+- Seleccionar el precio medio de todos los productos.
+select avg(precio) from articulos;
+
+- Obtener el precio medio de los artículos cuyo código de fabricante sea 2.
+select avg(precio) from articulos
+where idCodigo = 2;
+
+- Obtener el número de artículos cuyo precio sea mayor o igual a $180.
+select count(*)
+from articulos
+where precio >= '180';
+
+- Obtener el nombre y precio de los artículos cuyo precio sea mayor o igual a $180 y ordenarlos descendentemente por precio, 
+y luego descendentemente por nombre.
+select nombre, precio
+from articulos
+where precio >= 180
+order by precio desc, nombre;
+
+- Obtener un listado completo de artículos, incluyendo por cada artículo los datos del artículo y su fabricante.
+select * from articulos
+inner join fabricantes
+on fabricantes.idcodigo = articulos.idArticulo;
+
+- Obtener un listado de artículos, incluyendo el nombre del artículo, su precio y el nombre de su fabricante.
+select articulos.nombre, precio, fabricantes.nombre
+from articulos
+inner join fabricantes
+on fabricantes.idCodigo = articulos.idCodigo;
+
+- Obtener el precio medio de los productos de cada fabricante, mostrando solo los códigos del fabricante.
+select avg(precio), idCodigo
+from articulos
+group by idCodigo;
+
+- Obtener el precio medio de los productos de cada fabricante, mostrando el nombre del fabricante.
+select avg(precio), fabricantes.nombre
+from articulos
+inner join fabricantes
+on articulos.idCodigo = fabricantes.idCodigo
+group by fabricantes.nombre;
+
+- Obtener los nombres de los fabricantes que ofrezcan productos cuyo precio medio sea mayor o igual a $150.
+select fabricantes.nombre, avg(precio)
+from articulos, fabricantes
+where articulos.idCodigo = fabricantes.idCodigo
+group by fabricantes.nombre
+having avg(precio) >= 150000;
+
+- Obtener una lista con el nombre y precio de los artículos más caros de cada proveedor (incluyendo el nombre del proveedor).
+select fabricantes.nombre, articulos.nombre, precio
+from articulos 
+inner join fabricantes
+on articulos.idCodigo = fabricantes.idCodigo
+where precio = (select max(precio) from fabricantes);
+
+- Obtener el nombre y precio del artículos más barato.
+select nombre, precio
+from articulos
+where precio = (select min(precio) from articulos);
+
+- Añadir un nuevo producto 'altavoces' de $70 (del fabricante 2)
+insert into articulos (nombre, precio, idCodigo)
+values
+('altavoces', 70, 2);
+
+- Cambiar el nombre del producto 8 a 'impresora lase'
+update articulos  set nombre ='impresora laser'
+where idArticulo = 8;
+
+- Aplicar un descuetno del 10% a todos los productos.
+update articulos set precio = precio * 0.9;
+
+- Aplicar un descuento de $10 a todos los productos cuyo precio sea mayor o igual a $120.
+update articulos set precio = precio - 10
+where precio >= 120;
+
+
+

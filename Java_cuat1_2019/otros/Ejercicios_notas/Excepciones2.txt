@@ -1,0 +1,24 @@
+﻿Excepciones - Ejercicio N| 2
+
+
+Crear un programa que genere un número aleatorio e indique si dicho número es par o impar.
+El programa utiliza el método random() de la clase Math para generar un número aleatorio entre 0 y 999, a continuación se lanza una excepción con el correspondiente mensaje. El manejador de la excepción se limitará a mostrar el mensaje asociado a la excepción capturada
+
+
+public class AppExcepcion{
+        public static void main(String[] args){
+        
+        try{
+                System.out.println(“Generando un número aleatorio”);
+                int nro=(int)(Math.random()*1000);
+                if(nro%2==0){
+                        throw new Exception(“El número generado es par”);
+                                }else{
+                        throw new Exception(“El número generado es impar”);
+                                }
+                }
+        catch(Exception ex){
+                System.out.print(ex.getMessage());
+                }
+        }
+}

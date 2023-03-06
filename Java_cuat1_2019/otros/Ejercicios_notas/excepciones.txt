@@ -1,0 +1,27 @@
+try1 para valor 0.
+try para valor fuera del rango
+try para los 2 errores
+
+public class try11 {
+
+    public static void main(String[] args) {
+          int valor1, valor2, cociente;
+          
+       Scanner tc1 = new Scanner(System.in);
+        try{
+        System.out.println("Ingrese  un valor:  ");
+        valor1 = tc1.nextInt();    
+        
+        System.out.println("Ingrese otro valor:  ");
+        valor2 = tc1.nextInt();      
+      
+        cociente = valor1 / valor2;
+}
+        catch (ArithmeticException e){
+         System.out.println("Ingresó un valor incorrecto ");
+}
+        finally{    
+            System.out.println("Esto se ejecuta siempre");
+}
+}
+    }
